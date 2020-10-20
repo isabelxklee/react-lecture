@@ -1,5 +1,16 @@
 # Let's learn React.js!
 
+## Table of contents
+* [Setting up a new React app](#setup)
+* [Learning goals](#goals)
+* [Navigating the file structure](#files)
+  * [Cleaning up the default files](#clean-up)
+  * [Important files to pay attention to](#important-files)
+* [Deliverables](#deliverables)
+* [Resources](#resources)
+
+<a name="setup"/>
+
 ## Setting up a new React app
 In your terminal, run the following command to create a new React app. Replace `my-app-name` with the name of your app.
 
@@ -20,6 +31,8 @@ $ npm start
 ```
 
 Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation) in Google Chrome. It will help you view React component hierarchies in the browser.
+
+<a name="goals"/>
 
 ## Learning goals
 * State management
@@ -50,7 +63,12 @@ Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-de
   * if/else conditional statements vs. ternary operators
   * React loooooves arrow functions
 
+<a name="files"/>
+
 ## Navigating the file structure
+
+<a name="clean-up"/>
+
 ### Cleaning up the default files
 You can go ahead and delete the following files, as we won't be using them. These are just files that get automatically created when you start a new React app, but aren't necessary. 
 
@@ -178,6 +196,8 @@ function App() {
 export default App
 ```
 
+<a name="important-files"/>
+
 ### Important files to pay attention to
 
 `package.json`
@@ -203,7 +223,11 @@ export default App
 
 `public/index.html`
 
+<a name="deliverables"/>
+
 ## Deliverables
 
-## Sources
+<a name="resources"/>
+
+## Resources
 * https://reactjs.org/docs/events.html
