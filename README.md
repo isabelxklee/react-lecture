@@ -3,7 +3,7 @@
 ## Table of contents
 * [Setting up a new React app](#setup)
 * [Learning goals](#goals)
-* [Navigating the file structure](#files)
+* [Navigating the file structure](#file-structure)
   * [Cleaning up the default files](#clean-up)
   * [Important files to pay attention to](#important-files)
 * [Deliverables](#deliverables)
@@ -63,7 +63,7 @@ Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-de
   * if/else conditional statements vs. ternary operators
   * React loooooves arrow functions
 
-<a name="files"/>
+<a name="file-structure"/>
 
 ## Navigating the file structure
 
