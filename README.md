@@ -19,6 +19,8 @@ Start the server and navigate to `localhost:3000` in your browser.
 $ npm start
 ```
 
+Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation) in Google Chrome. It will help you view React component hierarchies in the browser.
+
 ## Learning goals
 * State management
   * Updating the local state through `this.setState()`
@@ -49,6 +51,7 @@ $ npm start
   * React loooooves arrow functions
 
 ## Navigating the file structure
+### Cleaning up the default files
 You can go ahead and delete the following files, as we won't be using them. These are just files that get automatically created when you start a new React app, but aren't necessary. 
 
 ```
@@ -61,7 +64,121 @@ public/logo192.png
 public/logo512.png
 ```
 
-#### Important files to understand
+Your console's going to be throwing a lot of errors at you now, so let's update some code.
+
+Copy and paste this code into `src/index.js`:
+
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
+```
+
+Copy and paste this code into `public/index.html`:
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+Copy and paste this code into `public/manifest.json`:
+
+```json
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
+```
+
+Copy and paste this code into `src/App.css`:
+
+```css
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+```
+
+Copy and paste this code into `src/App.js`:
+
+```javascript
+import React from 'react'
+import './App.css'
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  )
+}
+
+export default App
+```
+
+### Important files to pay attention to
 
 `package.json`
   * Where all your dependencies live
