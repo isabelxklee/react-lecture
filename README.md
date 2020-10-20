@@ -49,10 +49,10 @@ $ npm start
   * React loooooves arrow functions
 
 ## Navigating the file structure
-You can go ahead and delete the following files, as we won't be using them:
+You can go ahead and delete the following files, as we won't be using them. These are just files that get automatically created when you start a new React app, but aren't necessary. 
 
 ```
-src/App.text.js
+src/App.test.js
 src/logo.svg
 src/serviceWorker.js
 src/setupTests.js
@@ -60,6 +60,8 @@ src/setupTests.js
 public/logo192.png
 public/logo512.png
 ```
+
+#### Important files to understand
 
 `package.json`
   * Where all your dependencies live
