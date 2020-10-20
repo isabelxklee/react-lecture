@@ -1,4 +1,4 @@
-# Let's learn React!
+# Let's learn React.js!
 
 ## How to create a new React app
 In your terminal, run the following command to create a new React app. Replace `my-app-name` with the name of your app.
