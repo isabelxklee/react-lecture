@@ -20,5 +20,20 @@ $ npm start
 ```
 
 ## Learning goals
+* State management
+
+* Components
+  * Difference between functional components and class components
+
+* Inverse data flow
+  * Parent <> child relationships
+  * How and when to use props
+
+* Event handlers
+
+* Syntax quirks
+  * JSX fragments
+  * Functions must have an explicit return value
+  * if/else conditional statements vs. ternary operators
 
 ## Deliverables
