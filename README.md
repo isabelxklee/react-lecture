@@ -113,9 +113,9 @@ In this example project, we're going to be creating a team directory for SuperHi
 * Create a `<p>` tag. Put "Here are all the wonderful members of SuperHi!" in between the `<p>` tags.
 
 #### 2. Create a functional component called `TeamContainer.jsx` inside the `src` directory.
-* Create a functional component that renders all the SuperHi team members as a `<TeamMemberCard>` component.
+* Create a functional component that renders all the SuperHi team members as a `<TeamMember>` component.
 
-#### 3. Create a class component called `TeamMemberCard.jsx` inside the `src` directory.
+#### 3. Create a class component called `TeamMember.jsx` inside the `src` directory.
 * Each team member card should display their personal information and have an "Edit" button and "Delete" button.
 
 #### 4. Write a fetch GET request in `App.js` to pull in our data.
