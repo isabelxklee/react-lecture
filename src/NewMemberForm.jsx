@@ -26,7 +26,8 @@ class NewMemberForm extends Component {
         name: this.state.name,
         role: this.state.role,
         location: this.state.location,
-        picture: this.state.picture
+        picture: this.state.picture,
+        stars: 0
       })
     })
     .then(r => r.json())

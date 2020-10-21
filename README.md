@@ -36,12 +36,7 @@ Open `http://localhost:3001` in the browser to see your app.
 <a name="goals"/>
 
 ## Learning goals
-State management
-* Updating local state through `setState()`
-* `setState()` re-renders the component
-* What about global state? -> Redux
-
-Components
+#### Components
 * Functional components vs. class components
 * When should you use each component?
 * Do you need access to `this` keyword? -> Class component
@@ -49,31 +44,40 @@ Components
 * Are you writing minimal logic that doesn't change the state? -> Functional component
 * Are you using the component as a container to render other child components? -> Functional component
 
-Lifecycle methods
+#### State management
+* Updating local state through `setState()`
+* `setState()` re-renders the component
+* What about global state? -> Redux
+
+#### Lifecycle methods
 * componentDidMount()
   * Initializes data from an endpoint
   * Can only be called once in a component, but can contain multiple fetch requests
+
 * render()
   * Required in a class component
   * Shouldn't contain any logic that will manipulate the state
-* asynchronous rendering
 
-Inverse data flow
+* Asynchronous rendering
+
+#### Inverse data flow
 * Parent <> child relationships
+* Function definition -> down, invocation -> up
 * Siblings can't talk to each other
 * How and when to use props
 * Child components in a list *always* need a key prop
 
-Event handlers
+#### Event handlers
 * There are different kinds of event handlers available to us, depending on the HTML element that we're interacting with
 * Here are some of the most common event handlers that we'll be using:
-* onClick (buttons), onSubmit (forms), onChange (input fields)
+  * onClick (buttons), onSubmit (forms), onChange (input fields)
 
-Syntax quirks
+#### Syntax quirks
 * JSX fragments
 * Functions must have an explicit return value
 * if/else conditional statements vs. ternary operators
 * React loooooves arrow functions
+* Destructuring props for DRYer code
 
 <a name="file-structure"/>
 
@@ -106,7 +110,7 @@ Here's a breakdown of some of the important files in your React app:
 <a name="deliverables"/>
 
 ## Deliverables
-In this example project, we're going to be creating a team directory for SuperHi! For each SuperHi team member, we're going to display their profile picture, name, role, and location.
+In this example project, we're going to be creating a team directory for SuperHi! For each SuperHi team member, we're going to display their profile picture, name, role, location, and the number of stars they have.
 
 #### 1. Change the data in `App.js`.
 * Create an `<h1>` tag. Put "SuperHi Team Directory" in between the `<h1>` tags.
@@ -116,15 +120,16 @@ In this example project, we're going to be creating a team directory for SuperHi
 * Create a functional component that renders all the SuperHi team members as a `<TeamMember>` component.
 
 #### 3. Create a class component called `TeamMember.jsx` inside the `src` directory.
-* Each team member card should display their personal information and have an "Edit" button and "Delete" button.
+* Each team member card should display their personal information and have a "Give a star" button and "Remove" button.
 
 #### 4. Write a fetch GET request in `App.js` to pull in our data.
 * Use `componentDidMount()`.
-* Set the local state after completing the fetch request. 
+* Update the local state with our new array of team members after completing the fetch request. 
 
 #### 5. Create a class component called `NewMemberForm.jsx`.
 * Create an HTML form that lets you add a new team member.
 * There should be input fields for: name, role, picture, and location.
+* No need to create an input field for stars because everyone starts with 0!
 
 #### 6. Create event handlers for the form.
 * Add `onChange` event handlers for each input field that updates the local state.
