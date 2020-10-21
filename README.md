@@ -102,7 +102,7 @@ OPTIONAL: Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/ne
 <a name="clean-up"/>
 
 ### Cleaning up the default files
-You can go ahead and delete the following files, as we won't be using them. These are just files that get automatically created when you start a new React app, but aren't necessary. 
+These are some of the files that come with a default React app, but they're not necessary. You can go ahead and delete them.
 
 ```
 src/App.test.js
@@ -114,105 +114,7 @@ public/logo192.png
 public/logo512.png
 ```
 
-Your console's going to be throwing a lot of errors at you now, so let's update some code.
-
-Copy and paste this code into `src/index.js`:
-
-```javascript
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
-```
-
-Copy and paste this code into `public/index.html`:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="A directory of all the SuperHi team members."
-    />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>SuperHi Team Directory</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
-</html>
-
-```
-
-Copy and paste this code into `public/manifest.json`:
-
-```json
-{
-  "name": "SuperHi Team Directory",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
-```
-
-Copy and paste this code into `src/App.css`:
-
-```css
-body {
-  padding: 6em;
-  background-color: #2727e6;
-  color: white;
-  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
-}
-
-h1 {
-  font-size: 4em;
-  margin-bottom: 0;
-}
-
-p {
-  font-size: 1.4em;
-  margin-bottom: 0;
-}
-```
-
-Copy and paste this code into `src/App.js`:
-
-```javascript
-import React from 'react'
-import './App.css'
-
-function App() {
-  return (
-    <div>
-
-    </div>
-  )
-}
-
-export default App
-```
+Now, your console's going to be throwing a lot of errors at you, so make sure to go through your code and remove references to these deleted files.
 
 <a name="important-files"/>
 
@@ -246,6 +148,7 @@ export default App
 ## Deliverables
 ### 1. Change the data in `App.js`.
 * Create an `<h1>` tag. Put "SuperHi Team Directory" in between the `<h1>` tags.
+* Create a `<p>` tag. Put "Here are all the wonderful members of SuperHi!" in between the `<p>` tags.
 
 ### 2. Create a functional component called `TeamContainer.jsx` inside the `src` directory.
 * Create a functional component that renders all the SuperHi team members as a `<TeamMemberCard>` component.
