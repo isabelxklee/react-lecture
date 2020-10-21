@@ -56,8 +56,6 @@ Start the server and navigate to `localhost:3000` in your browser.
 $ npm start
 ```
 
-OPTIONAL: Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation) in Google Chrome. This will help you view React component hierarchies in the browser.
-
 <a name="goals"/>
 
 ## Learning goals
@@ -187,4 +185,10 @@ Now, your console's going to be throwing a lot of errors at you, so make sure to
 <a name="resources"/>
 
 ## Resources
-* https://reactjs.org/docs/events.html
+* React events: https://reactjs.org/docs/events.html
+
+* JSON View: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
+  * OPTIONAL: Install JSON View as a Google Chrome Extension to help you view JSON documents.
+
+* React Developer Tools: https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation
+  * OPTIONAL: Install React Developer Tools as a Google Chrome Extension to help you view React component hierarchies in the browser.
