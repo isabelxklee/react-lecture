@@ -2,12 +2,10 @@
 
 ## Table of contents
 * [Getting started](#getting-started)
-* [How to create a new React app](#new-app)
 * [Learning goals](#goals)
 * [Navigating the file structure](#file-structure)
-  * [Cleaning up the default files](#clean-up)
-  * [Important files to pay attention to](#important-files)
 * [Deliverables](#deliverables)
+* [How to create a new React app](#new-app)
 * [Resources](#resources)
 
 <a name="getting-started"/>
@@ -34,27 +32,6 @@ The terminal will ask you to start a new server since we already have the JSON s
 Open `http://localhost:3001` in the browser to see your app.
 
 * OPTIONAL: Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
-
-<a name="new-app"/>
-
-## How to create a new React app
-In your terminal, run the following command to create a new React app. Replace `my-app-name` with the name of your app.
-
-```
-$ npx create-react-app my-app-name
-```
-
-Navigate to the new directory.
-
-```
-$ cd my-app-name
-```
-
-Start the server and navigate to `localhost:3000` in your browser.
-
-```
-$ npm start
-```
 
 <a name="goals"/>
 
@@ -101,27 +78,7 @@ $ npm start
 <a name="file-structure"/>
 
 ## Navigating the file structure
-
-<a name="clean-up"/>
-
-### Cleaning up the default files
-These are some of the files that come with a default React app, but they're not necessary. You can go ahead and delete them.
-
-```
-src/App.test.js
-src/logo.svg
-src/serviceWorker.js
-src/setupTests.js
-
-public/logo192.png
-public/logo512.png
-```
-
-Now, your console's going to be throwing a lot of errors at you, so make sure to go through your code and remove references to these deleted files.
-
-<a name="important-files"/>
-
-### Important files to pay attention to
+Here's a breakdown of some of the important files in your React app:
 
 `package.json`
   * Where all your dependencies live
@@ -149,6 +106,8 @@ Now, your console's going to be throwing a lot of errors at you, so make sure to
 <a name="deliverables"/>
 
 ## Deliverables
+In this example project, we're going to be creating a team directory for SuperHi! For each SuperHi team member, we're going to display their profile picture, name, role, and location.
+
 ### 1. Change the data in `App.js`.
 * Create an `<h1>` tag. Put "SuperHi Team Directory" in between the `<h1>` tags.
 * Create a `<p>` tag. Put "Here are all the wonderful members of SuperHi!" in between the `<p>` tags.
@@ -181,14 +140,50 @@ Now, your console's going to be throwing a lot of errors at you, so make sure to
 
 ### 10. Write a fetch DELETE request for deleting a team member.
 
+<a name="new-app"/>
+
+## How to create a new React app
+Now, if you want to try creating your own React app from scratch, here are the steps:
+
+In your terminal, run the following command. Replace `my-app-name` with the name of your app.
+
+```
+$ npx create-react-app my-app-name
+```
+
+Navigate to the new directory.
+
+```
+$ cd my-app-name
+```
+
+Start the server and navigate to `localhost:3000` in your browser.
+
+```
+$ npm start
+```
+
+### Cleaning up the default files
+These are some of the files that come with a default React app, but they're not necessary. You can go ahead and delete them.
+
+```
+src/App.test.js
+src/logo.svg
+src/serviceWorker.js
+src/setupTests.js
+
+public/logo192.png
+public/logo512.png
+```
+
+After you do this, your console's going to be throwing a lot of errors at you, so make sure to go through your code and remove references to these deleted files.
 
 <a name="resources"/>
 
 ## Resources
-* React events: https://reactjs.org/docs/events.html
-
-* JSON View: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
+React events: https://reactjs.org/docs/events.html
+JSON View: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
   * OPTIONAL: Install JSON View as a Google Chrome Extension to help you view JSON documents.
 
-* React Developer Tools: https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation
+React Developer Tools: https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation
   * OPTIONAL: Install React Developer Tools as a Google Chrome Extension to help you view React component hierarchies in the browser.
