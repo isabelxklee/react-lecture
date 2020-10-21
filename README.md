@@ -13,22 +13,27 @@
 <a name="getting-started"/>
 
 ## Getting started
-* Fork this repo. Copy the new repo URL and run `git clone` in your terminal. `cd` into the new directory and run these commands.
+Fork this repo. Copy the new repo URL and run `git clone` in your terminal. `cd` into the new directory and run these commands.
 
 ```
 npm install
+npm install -g json-server
 json-server --watch db.json
 ```
 
-* Open up a new terminal and run the following command:
+This will start the JSON server in `localhost:3000`. Navigate to `localhost:3000/team-members` in the browser to see all our data.
+
+Now, open up a new terminal and run the following command:
 
 ```
 npm start
 ```
 
-* The terminal will ask you to start a new server since we already have the JSON server running on `localhost:3000`. Enter `y` to start a new server on `localhost:3001`.
-* Open `http://localhost:3001` in the browser to see your app.
-* Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
+The terminal will ask you to start a new server since we already have the JSON server running on `localhost:3000`. Enter `y` to start a new server on `localhost:3001`.
+
+Open `http://localhost:3001` in the browser to see your app.
+
+* OPTIONAL: Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
 
 <a name="new-app"/>
 
