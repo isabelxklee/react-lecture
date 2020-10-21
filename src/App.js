@@ -23,7 +23,7 @@ class App extends Component {
         <h1>SuperHi Team Directory</h1>
         <p>Here are all the wonderful members of SuperHi!</p>
         <TeamContainer teamMembers={this.state.teamMembers}/>
-    </div>
+      </div>
     )
   }
 }

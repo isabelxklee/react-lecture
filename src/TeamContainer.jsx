@@ -7,9 +7,9 @@ const TeamContainer = (props) => {
   })
 
   return (
-    <>
+    <div className="card-container">
       {teamArray}
-    </>
+    </div>
   )
 }
  
