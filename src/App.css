@@ -41,7 +41,7 @@ input[type="text"] {
   font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
   font-size: 1em;
   margin: 0.4em 0em 1.2em 0em;
-  width: 30%;
+  width: 25%;
 }
 
 label {
@@ -58,7 +58,7 @@ img {
 form {
   border: 2px solid white;
   padding: 2em;
-  margin-top: 2em;
+  margin-top: 4em;
 }
 
 .card-container {

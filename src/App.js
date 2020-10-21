@@ -18,13 +18,19 @@ class App extends Component {
     })
   }
 
-  render() { 
+  addNewMember = (newMember) => {
+    this.setState({
+      teamMembers: [...this.state.teamMembers, newMember]
+    })
+  }
+
+  render() {
     return (
       <div>
         <h1>SuperHi Team Directory</h1>
         <p>Here are all the wonderful members of SuperHi!</p>
-        <TeamContainer teamMembers={this.state.teamMembers}/>
-        <NewMemberForm />
+        <TeamContainer teamMembers={this.state.teamMembers} />
+        <NewMemberForm addNewMember={this.addNewMember} />
       </div>
     )
   }

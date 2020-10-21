@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
 
 class TeamMember extends Component {
-  state = {  }
+  state = {
+    displayForm: false
+  }
 
-  render() { 
+  handleClick = (event) => {
+    this.setState({
+      displayForm: !this.state.displayForm
+    })
+  }
+
+  render() {
+    console.log(this.state.displayForm)
     let {name, role, location, picture} = this.props.teamMember
 
     return (
@@ -13,8 +22,8 @@ class TeamMember extends Component {
         <p>{role}</p>
         <p>{location}</p>
 
-        <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={this.handleClick}><span role="img" aria-label="star">⭐️ </span>Give a star</button>
+        <button><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
       </div>
     )
   }
