@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 
 class TeamMember extends Component {
-  state = {
-
-  }
-
-  handleClick = (event) => {
+  handleStars = (event) => {
     let {id, stars} = this.props.teamMember
 
     fetch(`http://localhost:3000/team-members/${id}`, {
@@ -23,6 +19,18 @@ class TeamMember extends Component {
     })
   }
 
+  handleDelete = (event) => {
+    let {id} = this.props.teamMember
+
+    fetch(`http://localhost:3000/team-members/${id}`, {
+      method: "DELETE"
+    })
+    .then(r => r.json())
+    .then(() => {
+      this.props.deleteMember(id)
+    })
+  }
+
   render() {
     let {name, role, location, picture, stars} = this.props.teamMember
 
@@ -35,8 +43,8 @@ class TeamMember extends Component {
         <p>{stars} stars</p>
 
         <div className="btn-group">
-          <button onClick={this.handleClick}><span role="img" aria-label="star">⭐️ </span>Give a star</button>
-          <button><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
+          <button onClick={this.handleStars}><span role="img" aria-label="star">⭐️ </span>Give a star</button>
+          <button onClick={this.handleDelete}><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
         </div>
       </div>
     )

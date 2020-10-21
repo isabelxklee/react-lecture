@@ -38,12 +38,21 @@ class App extends Component {
     })
   }
 
+  deleteMember = (deletedId) => {
+    let newArray = this.state.teamMembers.filter((member) => {
+      return member.id !== deletedId
+    })
+    this.setState({
+      teamMembers: newArray
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>SuperHi Team Directory</h1>
         <p>Here are all the wonderful members of SuperHi!</p>
-        <TeamContainer teamMembers={this.state.teamMembers} updateMember={this.updateMember}/>
+        <TeamContainer teamMembers={this.state.teamMembers} updateMember={this.updateMember} deleteMember={this.deleteMember}/>
         <NewMemberForm addNewMember={this.addNewMember} />
       </div>
     )
