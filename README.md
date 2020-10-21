@@ -36,7 +36,8 @@ Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-de
 
 ## Learning goals
 * State management
-  * Updating the local state through `this.setState()`
+  * Updating local state through `setState()`
+  * `setState()` re-renders the component
   * What about global state? -> Redux
 
 * Components
@@ -47,8 +48,18 @@ Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-de
   * Are you writing minimal logic that doesn't change the state? -> Functional component
   * Are you using the component as a container to render other child components? -> Functional component
 
+* Lifecycle methods
+  * componentDidMount()
+    * Initializes data from an endpoint
+    * Can only be called once in a component, but can contain multiple fetch requests
+  * render()
+    * Required in a class component
+    * Shouldn't contain any logic that will manipulate the state
+  * asynchronous rendering
+
 * Inverse data flow
   * Parent <> child relationships
+  * Siblings can't talk to each other
   * How and when to use props
   * Child components in a list *always* need a key prop
 
@@ -226,7 +237,37 @@ export default App
 <a name="deliverables"/>
 
 ## Deliverables
-### 1. Update the data in `App.js`.
+### 1. Change the data in `App.js`.
+* Create an `<h1>` tag. Put "SuperHi's Team Directory" in between the `<h1>` tags.
+
+### 2. Create a functional component called `TeamContainer.jsx` inside the `src` directory.
+* Create a functional component that renders all the SuperHi team members as a `<TeamMemberCard>` component.
+
+### 3. Create a class component called `TeamMemberCard.jsx` inside the `src` directory.
+* Each team member card should display their personal information and have an "Edit" button and "Delete" button.
+
+### 4. Write a fetch GET request in `App.js` to pull in our data.
+* Use `componentDidMount()`.
+* Set the local state after completing the fetch request. 
+
+### 5. Create a class component called `NewMemberForm.jsx`.
+* Create an HTML form that lets you add a new team member.
+* There should be input fields for: name, role, picture, and location.
+
+### 6. Create event handlers for the form.
+* Add `onChange` event handlers for each input field that updates the local state.
+* Add an `onSubmit` event handler for the form itself.
+* Create helper methods that get invoked each time the event handler is triggered.
+
+### 7. Write a fetch POST request for adding a new team member.
+* This fetch request should be inside the helper method for  `onSubmit`.
+
+### 8. Create event handlers for the "Edit" and "Delete" buttons for each team member.
+
+### 9. Write a fetch PATCH request for updating a team member's information.
+
+### 10. Write a fetch DELETE request for deleting a team member.
+
 
 <a name="resources"/>
 
