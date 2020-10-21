@@ -1,18 +1,16 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  padding: 6em;
+  background-color: #2727e6;
   color: white;
+  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 1.4em;
+  margin-bottom: 0;
 }

@@ -3,8 +3,9 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <h1>SuperHi Team Directory</h1>
+      <p>Here are all the wonderful members of SuperHi!</p>
     </div>
   )
 }
