@@ -1,7 +1,8 @@
 # Let's learn React.js!
 
 ## Table of contents
-* [Setting up a new React app](#setup)
+* [Getting started](#getting-started)
+* [How to create a new React app](#new-app)
 * [Learning goals](#goals)
 * [Navigating the file structure](#file-structure)
   * [Cleaning up the default files](#clean-up)
@@ -9,9 +10,29 @@
 * [Deliverables](#deliverables)
 * [Resources](#resources)
 
-<a name="setup"/>
+<a name="getting-started"/>
 
-## Setting up a new React app
+## Getting started
+* Fork this repo. Copy the new repo URL and run `git clone` in your terminal. `cd` into the new directory and run these commands.
+
+```
+npm install
+json-server --watch db.json
+```
+
+* Open up a new terminal and run the following command:
+
+```
+npm start
+```
+
+* The terminal will ask you to start a new server since we already have the JSON server running on `localhost:3000`. Enter `y` to start a new server on `localhost:3001`.
+* Open `http://localhost:3001` in the browser to see your app.
+* Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
+
+<a name="new-app"/>
+
+## How to create a new React app
 In your terminal, run the following command to create a new React app. Replace `my-app-name` with the name of your app.
 
 ```
@@ -30,7 +51,7 @@ Start the server and navigate to `localhost:3000` in your browser.
 $ npm start
 ```
 
-Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation) in Google Chrome. It will help you view React component hierarchies in the browser.
+OPTIONAL: Install [React Developer Tools](https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation) in Google Chrome. This will help you view React component hierarchies in the browser.
 
 <a name="goals"/>
 
@@ -113,7 +134,7 @@ ReactDOM.render(
 
 Copy and paste this code into `public/index.html`:
 
-```javascript
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -123,24 +144,24 @@ Copy and paste this code into `public/index.html`:
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="A directory of all the SuperHi team members."
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
+    <title>SuperHi Team Directory</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>
+
 ```
 
 Copy and paste this code into `public/manifest.json`:
 
 ```json
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "SuperHi Team Directory",
   "icons": [
     {
       "src": "favicon.ico",
@@ -158,23 +179,21 @@ Copy and paste this code into `public/manifest.json`:
 Copy and paste this code into `src/App.css`:
 
 ```css
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  padding: 6em;
+  background-color: #2727e6;
   color: white;
+  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 1.4em;
+  margin-bottom: 0;
 }
 ```
 
@@ -186,7 +205,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <div>
 
     </div>
   )
