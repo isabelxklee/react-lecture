@@ -187,19 +187,7 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   )
 }
@@ -238,7 +226,7 @@ export default App
 
 ## Deliverables
 ### 1. Change the data in `App.js`.
-* Create an `<h1>` tag. Put "SuperHi's Team Directory" in between the `<h1>` tags.
+* Create an `<h1>` tag. Put "SuperHi Team Directory" in between the `<h1>` tags.
 
 ### 2. Create a functional component called `TeamContainer.jsx` inside the `src` directory.
 * Create a functional component that renders all the SuperHi team members as a `<TeamMemberCard>` component.
