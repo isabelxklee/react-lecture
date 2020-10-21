@@ -2,75 +2,94 @@
   "team-members": [
     {
       "id": 1,
-      "name": "Finkie",
-      "age": 5,
-      "sex": "male",
-      "picture": "https://pbs.twimg.com/media/EXc1EEqWkAYOCAV?format=jpg&name=medium",
-      "likes": 8,
-      "favorite toy": "random piece of string"
+      "name": "Rik",
+      "role": "CEO",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U012D4JTHCN-018724686353-512",
+      "location": "New York City, USA"
     },
     {
       "id": 2,
-      "name": "Kenny",
-      "age": 8,
-      "sex": "female",
-      "picture": "https://www.incimages.com/uploaded_files/image/1920x1080/getty_513189787_110007.jpg",
-      "likes": 36,
-      "favorite toy": "baby dog"
+      "name": "Ryan",
+      "role": "Senior Developer",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U012D33N3PG-96b4eb87ac4c-512",
+      "location": "Scotland"
     },
     {
-      "name": "Felix",
-      "age": "200",
-      "sex": "male",
-      "favorite toy": "red ball",
-      "picture": "https://www.pets4homes.co.uk/images/classifieds/2016/03/21/1231092/large/lovely-blackwhite-felix-look-alike-girl-kitten-5791f88c64f33.JPG",
       "id": 3,
-      "likes": 13
+      "name": "Chris",
+      "role": "Senior Software Engineer",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U0128S6U0AH-a4fad2a5e6e7-512",
+      "location": "London, UK"
     },
     {
-      "name": "Bone Bone",
-      "age": "87",
-      "sex": "female",
-      "favorite toy": "backpack",
-      "picture": "https://static.boredpanda.com/blog/wp-content/uploads/2017/03/fluffy-cat-bone-bone-thai-31-58de01514c876__700.jpg",
       "id": 4,
-      "likes": 6
+      "name": "Mariví",
+      "role": "User Researcher",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U0139LJDCN4-0759399dafb5-512",
+      "location": "Sweden"
     },
     {
-      "name": "Biscuit",
-      "age": "2",
-      "sex": "female",
-      "favorite toy": "human hand",
-      "picture": "https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
       "id": 5,
-      "likes": 14
+      "name": "André",
+      "role": "Designer",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U0139LUU6DN-2d3fefded8fa-512",
+      "location": "Portugal"
     },
     {
-      "name": "Burrito Dude",
-      "age": "129",
-      "sex": "male",
-      "favorite toy": "tinfoil wrapper",
-      "picture": "https://static.india.com/wp-content/uploads/2015/11/089.jpg?impolicy=Medium_Resize&w=1200&h=800",
       "id": 6,
-      "likes": 10
+      "name": "Ana",
+      "role": "Head of Content",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U0139MF5D40-56c119a92454-512",
+      "location": "Vancouver, Canada"
     },
     {
-      "name": "Custard",
-      "age": "3",
-      "sex": "male",
-      "favorite toy": "peanut butter jar",
-      "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/49410438/3/?bust=1602347258&width=1080",
-      "likes": 6,
-      "id": 7
+      "id": 7,
+      "name": "Rusty",
+      "role": "Strategy, Data, + Operations",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U012YF4MRQR-3bf470b2a774-512",
+      "location": "Los Angeles, USA"
     },
     {
-      "name": "Pup",
-      "age": "10",
-      "sex": "female",
-      "favorite toy": "catnip",
-      "picture": "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
-      "likes": 7,
-      "id": 8
+      "id": 8,
+      "name": "Mirna",
+      "role": "Customer Support Specialist",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U012D4DUF8W-efc1d0872a37-512",
+      "location": "UK"
+    },
+    {
+      "id": 9,
+      "name": "Brian",
+      "role": "Community",
+      "picture": "https://ca.slack-edge.com/T08DYEW8M-U011DH6B1RC-596ec199cc7a-512",
+      "location": "New York City, USA"
+    },
+    {
+      "id": 10,
+      "name": "Varshini",
+      "role": "Educator",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U0141B6R423-9c7a0fb66a54-512",
+      "location": "Hong Kong"
+    },
+    {
+      "id": 11,
+      "name": "Arianna",
+      "role": "Educator",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U01ADG8UZ51-8655b4512312-512",
+      "location": "San Francisco, USA"
+    },
+    {
+      "id": 12,
+      "name": "Liz",
+      "role": "Senior Product Designer",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U018VPNAM5H-a661f5c1a344-512",
+      "location": "New York City, USA"
+    },
+    {
+      "id": 13,
+      "name": "Isabel",
+      "role": "Teacher",
+      "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U01CW1YEEAE-745aa26b6c8c-512",
+      "location": "New York City, USA"
     }
   ]
 }
