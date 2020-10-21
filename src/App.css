@@ -20,14 +20,32 @@ p {
   margin: 0;
 }
 
-button {
+button, input[type="submit"] {
   background-color: #2727e6;
   color: white;
   font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
   font-size: 1em;
+  font-weight: 700;
   border: none;
   padding: 0.6em 1.2em;
   margin: 1em 0.4em 0em 0em;
+}
+
+input[type="submit"] {
+  background-color: white;
+  color: #2727e6;
+}
+
+input[type="text"] {
+  padding: 0.4em;
+  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 0.4em 0em 1.2em 0em;
+  width: 30%;
+}
+
+label {
+  font-weight: 700;
 }
 
 img {
@@ -35,6 +53,12 @@ img {
   width: 100%;
   margin-bottom: 0.4em;
   border-radius: 50%;
+}
+
+form {
+  border: 2px solid white;
+  padding: 2em;
+  margin-top: 2em;
 }
 
 .card-container {
