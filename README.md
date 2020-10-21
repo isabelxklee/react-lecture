@@ -226,6 +226,7 @@ export default App
 <a name="deliverables"/>
 
 ## Deliverables
+### 1. Update the data in `App.js`.
 
 <a name="resources"/>
 
