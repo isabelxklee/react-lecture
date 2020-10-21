@@ -20,6 +20,16 @@ p {
   margin: 0;
 }
 
+button {
+  background-color: #2727e6;
+  color: white;
+  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  border: none;
+  padding: 0.6em 1.2em;
+  margin: 1em 0.4em 0em 0em;
+}
+
 img {
   object-fit: cover;
   width: 100%;

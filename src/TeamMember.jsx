@@ -12,6 +12,9 @@ class TeamMember extends Component {
         <h3>{name}</h3>
         <p>{role}</p>
         <p>{location}</p>
+
+        <button>Edit</button>
+        <button>Delete</button>
       </div>
     )
   }
