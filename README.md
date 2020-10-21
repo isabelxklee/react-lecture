@@ -145,6 +145,9 @@ In this example project, we're going to be creating a team directory for SuperHi
 
 #### 10. Write a fetch DELETE request for deleting a team member.
 
+#### Once you're done with all these deliverables, here's what your app shoud look like!
+![screenshot of react app](https://i.imgur.com/nBHT3Rj.png)
+
 <a name="new-app"/>
 
 ## How to create a new React app
