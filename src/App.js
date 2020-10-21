@@ -24,12 +24,26 @@ class App extends Component {
     })
   }
 
+  updateMember = (updatedMember) => {
+    let newArray = this.state.teamMembers.map((member) => {
+      if (member.id === updatedMember.id) {
+        return updatedMember
+      } else {
+        return member
+      }
+    })
+
+    this.setState({
+      teamMembers: newArray
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>SuperHi Team Directory</h1>
         <p>Here are all the wonderful members of SuperHi!</p>
-        <TeamContainer teamMembers={this.state.teamMembers} />
+        <TeamContainer teamMembers={this.state.teamMembers} updateMember={this.updateMember}/>
         <NewMemberForm addNewMember={this.addNewMember} />
       </div>
     )

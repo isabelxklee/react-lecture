@@ -2,18 +2,29 @@ import React, { Component } from 'react'
 
 class TeamMember extends Component {
   state = {
-    displayForm: false
+
   }
 
   handleClick = (event) => {
-    this.setState({
-      displayForm: !this.state.displayForm
+    let {id, stars} = this.props.teamMember
+
+    fetch(`http://localhost:3000/team-members/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+        stars: stars + 1
+      })
+    })
+    .then(r => r.json())
+    .then((member) => {
+      this.props.updateMember(member)
     })
   }
 
   render() {
-    console.log(this.state.displayForm)
-    let {name, role, location, picture} = this.props.teamMember
+    let {name, role, location, picture, stars} = this.props.teamMember
 
     return (
       <div className="card">
@@ -21,9 +32,12 @@ class TeamMember extends Component {
         <h3>{name}</h3>
         <p>{role}</p>
         <p>{location}</p>
+        <p>{stars} stars</p>
 
-        <button onClick={this.handleClick}><span role="img" aria-label="star">⭐️ </span>Give a star</button>
-        <button><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
+        <div className="btn-group">
+          <button onClick={this.handleClick}><span role="img" aria-label="star">⭐️ </span>Give a star</button>
+          <button><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
+        </div>
       </div>
     )
   }

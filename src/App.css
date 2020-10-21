@@ -28,7 +28,8 @@ button, input[type="submit"] {
   font-weight: 700;
   border: none;
   padding: 0.6em 1.2em;
-  margin: 1em 0.4em 0em 0em;
+  margin: 0.4em 0.4em 0em 0em;
+  border-radius: 0.2em;
 }
 
 input[type="submit"] {
@@ -51,7 +52,7 @@ label {
 img {
   object-fit: cover;
   width: 100%;
-  margin-bottom: 0.4em;
+  margin-bottom: 1.4em;
   border-radius: 50%;
 }
 
@@ -72,5 +73,9 @@ form {
   background-color: white;
   color: black;
   border-radius: 0.4em;
-  padding: 2em;
+  padding: 1.4em;
+}
+
+.btn-group {
+  margin-top: 1.4em;
 }
