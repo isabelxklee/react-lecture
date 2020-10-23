@@ -1,59 +1,34 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './App.css'
-import TeamContainer from './TeamContainer.jsx'
-import NewMemberForm from './NewMemberForm.jsx'
+// import TeamContainer from './TeamContainer.jsx'
+// import NewMemberForm from './NewMemberForm.jsx'
 
 class App extends Component {
   state = {
-    teamMembers: []
+    // write a new attribute to store all the team members
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/team-members")
-    .then(r => r.json())
-    .then((newTeamMembers) => {
-      this.setState({
-        teamMembers: newTeamMembers
-      })
-    })
+    // write a GET fetch request to pull in all the data about the team members from the backend
   }
 
   addNewMember = (newMember) => {
-    this.setState({
-      teamMembers: [...this.state.teamMembers, newMember]
-    })
+    // update the state to add the new team member
   }
 
   updateMember = (updatedMember) => {
-    let newArray = this.state.teamMembers.map((member) => {
-      if (member.id === updatedMember.id) {
-        return updatedMember
-      } else {
-        return member
-      }
-    })
-
-    this.setState({
-      teamMembers: newArray
-    })
+    // update the state with the updated team member's information
   }
 
   deleteMember = (deletedId) => {
-    let newArray = this.state.teamMembers.filter((member) => {
-      return member.id !== deletedId
-    })
-    this.setState({
-      teamMembers: newArray
-    })
+    // update the state to remove the team member
   }
 
   render() {
     return (
       <div>
-        <h1>SuperHi Team Directory</h1>
-        <p>Here are all the wonderful members of SuperHi!</p>
-        <TeamContainer teamMembers={this.state.teamMembers} updateMember={this.updateMember} deleteMember={this.deleteMember}/>
-        <NewMemberForm addNewMember={this.addNewMember} />
+        <h1>{/* page title goes here */}</h1>
+        <p>{/* description goes here */}</p>
       </div>
     )
   }
