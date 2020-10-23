@@ -84,6 +84,25 @@ Open `http://localhost:3001` in the browser to see your app.
 ## Navigating the file structure
 Here's a breakdown of some of the important files in your React app:
 
+`public/index.html`
+* First page that gets loaded when your application starts
+
+`public/manifest.json`
+* Holds meta data about your app
+
+`src/index.js`
+* JavaScript file that gets loaded from `index.html`
+* Renders `App.js` from here
+
+`src/index.css`
+* CSS rules for `index.js`
+
+`src/App.js`
+* The main component that renders all the other components
+
+`src/App.css`
+* CSS rules for `App.js`
+
 `package.json`
 * Where all your dependencies live
 * If you edit this file, make sure to run `npm install` after!
@@ -94,18 +113,6 @@ Here's a breakdown of some of the important files in your React app:
 `.gitignore`
 * File that gets ignored when you push changes to GitHub
 * Handy for storing API keys and any other sensitive information
-
-`src/App.css`
-
-`src/App.js`
-
-`src/index.css`
-
-`src/index.js`
-
-`public/manifest.json`
-
-`public/index.html`
 
 <a name="deliverables"/>
 
