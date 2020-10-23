@@ -2,49 +2,27 @@ import React, { Component } from 'react'
 
 class TeamMember extends Component {
   handleStars = (event) => {
-    let {id, stars} = this.props.teamMember
-
-    fetch(`http://localhost:3000/team-members/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify({
-        stars: stars + 1
-      })
-    })
-    .then(r => r.json())
-    .then((member) => {
-      this.props.updateMember(member)
-    })
+    // write a fetch PATCH request that updates the number of stars for a specific team member
   }
 
   handleDelete = (event) => {
-    let {id} = this.props.teamMember
-
-    fetch(`http://localhost:3000/team-members/${id}`, {
-      method: "DELETE"
-    })
-    .then(r => r.json())
-    .then(() => {
-      this.props.deleteMember(id)
-    })
+    // write a fetch DELETE request that deletes a team member from the backend
   }
 
   render() {
-    let {name, role, location, picture, stars} = this.props.teamMember
+    // destructure props here
 
     return (
       <div className="card">
-        <img src={picture} alt={name} />
-        <h3>{name}</h3>
-        <p>{role}</p>
-        <p>{location}</p>
-        <p>{stars} stars</p>
+        <img src={""} alt={""} />
+        <h3>{""}</h3>
+        <p>{""}</p>
+        <p>{""}</p>
+        <p>{""} stars</p>
 
         <div className="btn-group">
-          <button onClick={this.handleStars}><span role="img" aria-label="star">⭐️ </span>Give a star</button>
-          <button onClick={this.handleDelete}><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
+          <button><span role="img" aria-label="star">⭐️ </span>Give a star</button>
+          <button><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
         </div>
       </div>
     )
