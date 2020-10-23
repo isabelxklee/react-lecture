@@ -1,14 +1,14 @@
 import React from 'react'
-import TeamMember from './TeamMember.jsx'
+// import TeamMember from './TeamMember.jsx'
 
 const TeamContainer = (props) => {
-  let teamArray = props.teamMembers.map((member) => {
-    return <TeamMember key={member.id} teamMember={member} updateMember={props.updateMember} deleteMember={props.deleteMember}/>
-  })
+  // write logic that maps through the team members array that's been passed down as props
+  // save this enumerable to a variable
+  // for each member, return a <TeamMember> component
 
   return (
     <div className="card-container">
-      {teamArray}
+      {/* invoke the variable here */}
     </div>
   )
 }
