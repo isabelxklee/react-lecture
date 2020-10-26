@@ -31,7 +31,11 @@ The terminal will ask you to start a new server since we already have the JSON s
 
 Open `http://localhost:3001` in the browser to see your app.
 
-* OPTIONAL: Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
+##### A note on our data source
+* In this example project, our backend is simply going to be the JSON inside `db.json`, instead of an independent backend API.
+
+##### Optional, but helpful
+* Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
 
 <a name="goals"/>
 
@@ -84,68 +88,122 @@ Open `http://localhost:3001` in the browser to see your app.
 ## Navigating the file structure
 Here's a breakdown of some of the important files in your React app:
 
-`package.json`
-* Where all your dependencies live
-* If you edit this file, make sure to run `npm install` after!
+`public/index.html`
 
-`pacakge-lock.json`
-* Automatically generated file that changes any time your dependencies are updated
-
-`.gitignore`
-* File that gets ignored when you push changes to GitHub
-* Handy for storing API keys and any other sensitive information
-
-`src/App.css`
-
-`src/App.js`
-
-`src/index.css`
-
-`src/index.js`
+First page that gets loaded when your application starts.
 
 `public/manifest.json`
 
-`public/index.html`
+Holds meta data about your app.
+
+`src/index.js`
+
+JavaScript file that gets loaded from `index.html`. Renders `App.js` from here.
+
+`src/index.css`
+
+CSS rules for `index.js`.
+
+`src/App.js`
+
+The main component that renders all the other components.
+
+`src/App.css`
+
+CSS rules for `App.js`.
+
+`package.json`
+
+Where all your dependencies live. If you edit this file, make sure to run `npm install` after!
+
+`pacakge-lock.json`
+
+Automatically generated file that changes any time your dependencies are updated.
+
+`.gitignore`
+
+File that gets ignored when you push changes to GitHub. Handy for storing API keys and any other sensitive information.
 
 <a name="deliverables"/>
 
-## Deliverables
+## READ deliverables
 In this example project, we're going to be creating a team directory for SuperHi! For each SuperHi team member, we're going to display their profile picture, name, role, location, and the number of stars they have.
 
 #### 1. Change the data in `App.js`.
-* Create an `<h1>` tag. Put "SuperHi Team Directory" in between the `<h1>` tags.
-* Create a `<p>` tag. Put "Here are all the wonderful members of SuperHi!" in between the `<p>` tags.
+* Inside the `<h1>` tag, add "SuperHi Team Directory".
+* Inside the `<p>` tags, add "Here are all the wonderful members of SuperHi!".
 
-#### 2. Create a functional component called `TeamContainer.jsx` inside the `src` directory.
-* Create a functional component that renders all the SuperHi team members as a `<TeamMember>` component.
-
-#### 3. Create a class component called `TeamMember.jsx` inside the `src` directory.
-* Each team member card should display their personal information and have a "Give a star" button and "Remove" button.
-
-#### 4. Write a fetch GET request in `App.js` to pull in our data.
+#### 2. Write a fetch GET request in `App.js` to pull in our data from the backend.
 * Use `componentDidMount()`.
-* Update the local state with our new array of team members after completing the fetch request. 
+* Send the fetch request to `localhost:3000/team-members`.
+* Update the local state with our new array of team members.
 
-#### 5. Create a class component called `NewMemberForm.jsx`.
-* Create an HTML form that lets you add a new team member.
-* There should be input fields for: name, role, picture, and location.
-* No need to create an input field for stars because everyone starts with 0!
+#### 3. Invoke the `TeamContainer` component inside `App.js`'s return statement.
+* Send down props from `App.js`'s local state to the `TeamContainer` component, so that `<TeamMember>` can render all the SuperHi team members.
 
-#### 6. Create event handlers for the form.
-* Add `onChange` event handlers for each input field that updates the local state.
-* Add an `onSubmit` event handler for the form itself.
-* Create helper methods that get invoked each time the event handler is triggered.
+#### 4. In `TeamContainer.jsx`, iterate through the array of team members passed down from props and return a `TeamMember` component for each person.
+* `TeamContainer` is a functional component, so it won't have access to `this` keyword.
+* Make sure to pass in the keyword `props` as an argument in the function definition for `TeamContainer`.
 
-#### 7. Write a fetch POST request for adding a new team member.
-* This fetch request should be inside the helper method for  `onSubmit`.
+#### 5. Display each team member's info in the `TeamMember` component.
+* Each team member card should display their personal information and have a "Give a star" button and "Remove" button.
+* Destructure the props in the `render()` method to have cleaner code in the return statement.
 
-#### 8. Create event handlers for the "Edit" and "Delete" buttons for each team member.
+## CREATE deliverables
 
-#### 9. Write a fetch PATCH request for updating a team member's information.
+#### 1. Create event handlers in `NewMemberForm.jsx`.
+* Write the following attributes for the local state: name, role, location, and picture.
+* Create a helper method that gets invoked every time a user interacts with an input field.
+* Add an `onChange` event handler for each input field. This should invoke the helper method written above.
+* Create a helper method for when the form gets submitted. This helper method should include `event.preventDefault()` to stop the page from refreshing. It should also include a fetch POST request to `localhost:3000/team-members`.
+* The stars attribute for new members can be set to 0 as a default.
+* Add an `onSubmit` event handler to the form itself. This should invoke the helper method written above.
 
-#### 10. Write a fetch DELETE request for deleting a team member.
+#### 2. Write a helper method in `App.js` that adds a new member to the local state.
+* Since we've already sent the new member's data to the backend (AKA our `db.json` file), we need to update the object in memory and the DOM. Since React automatically re-renders the browser any time the state is changed, we just need to focus on changing the object in memory.
+* Invoke `setState()` to update the local state.
+* Make sure to use the spread operator when invoking the array of team members to avoid directly mutating the data.
 
-#### Once you're done with all these deliverables, here's what your app shoud look like!
+#### 3. Send down our new helper method as props to `NewMemberForm.jsx`.
+* Inside the form submit helper method in `NewMemberForm.jsx`, invoke this helper method. Pass in the new team member instance as an argument.
+
+## UPDATE deliverables
+
+#### 1. In `TeamMember.jsx`, create an event handler for the "Give a star" button.
+* Create a helper method that gets invoked every time the user clicks on the `Give a star` button for a team member.
+* The helper method should include a fetch PATCH request to `localhost:3000/team-members/id`.
+* The only attribute that should be updated is the `stars` attribute. Its value should increase by 1 each time the fetch request is called.
+* Add an `onClick` event handler for this button that invokes the above helper method.
+
+#### 2. Write a helper method in `App.js` that updates an existing team member in the local state.
+* Inside the helper method, map through the array of team members from the local state. Write conditional logic that checks if the member that's being updated matches any of the existing members. If there's a match, return the member that's being update. If not, return the current member in the loop.
+* Save the return value of this iteration to a new variable.
+* Invoke `setState()` to update the local state. The new value for the team members attribute should be the newly created variable.
+
+#### 3. Send down our new helper method as props to `TeamContainer.jsx`.
+
+#### 4. Send down this helper method as props AGAIN to `TeamMember.jsx`.
+* Inside the helper method for updating a team member in `TeamMember.jsx`, invoke this helper method from props. Pass in the updated team member's instance as an argument.
+
+## DELETE deliverables
+
+#### 1. In `TeamMember.jsx`, create an event handler for the "Remove" button.
+* Create a helper method that gets invoked when the user clicks on the `Remove` button for a team member.
+* The helper method should include a fetch DELETE request to `localhost:3000/team-members/id`.
+* Add an `onClick` event handler for this button that invokes the above helper method.
+
+#### 2. Write a helper method in `App.js` that deletes an existing team member in the local state.
+* Inside the helper method, use the `filter()` array method to filter out the team member that's being deleted.
+* Save the return value of this iteration to a new variable.
+* Invoke `setState()` to update the local state. The new value for the team members attribute should be the newly created variable.
+
+#### 3. Send down our new helper method as props to `TeamContainer.jsx`.
+
+#### 4. Send down this helper method as props AGAIN to `TeamMember.jsx`.
+* Inside the helper method for deleting a team member in `TeamMember.jsx`, invoke this helper method from props. Pass in the deleted team member's id as an argument.
+
+## App preview
+Once you're done with all these deliverables, here's what your app shoud look like!
 ![screenshot of react app](https://i.imgur.com/nBHT3Rj.png)
 
 <a name="new-app"/>
@@ -192,7 +250,7 @@ After you do this, your console's going to be throwing a lot of errors at you, s
 React events: https://reactjs.org/docs/events.html
 
 JSON View: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
-* OPTIONAL: Install JSON View as a Google Chrome Extension to help you view JSON documents.
+* Optional: Install JSON View as a Google Chrome Extension to help you view JSON documents.
 
 React Developer Tools: https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation
-* OPTIONAL: Install React Developer Tools as a Google Chrome Extension to help you view React component hierarchies in the browser.
+* Optional: Install React Developer Tools as a Google Chrome Extension to help you view React component hierarchies in the browser.
