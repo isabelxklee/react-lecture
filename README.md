@@ -169,13 +169,32 @@ In this example project, we're going to be creating a team directory for SuperHi
 
 ## UPDATE deliverables
 
-#### 8. Create event handlers for the "Edit" and "Delete" buttons for each team member.
+#### 1. In `TeamMember.jsx`, create an event handler for the "Give a star" button.
+* Create a helper method that gets invoked every time the user clicks on the `Give a star` button.
+* The helper method should include a fetch PATCH request to `localhost:3000/team-members/id`.
+* The only attribute that should be updated is the `stars` attribute. Its value should increase by 1 each time the fetch request is called.
+* Add an `onClick` event handler for this button that invokes the above helper method.
 
-#### 9. Write a fetch PATCH request for updating a team member's information.
+#### 2. Write a helper method in `App.js` that updates an existing team member in the local state.
+* Inside the helper method, map through the array of team members from the local state. Write conditional logic that checks if the member that's being updated matches any of the existing members. If there's a match, return the member that's being update. If not, return the current member in the loop.
+* Save the return value of this iteration to a new variable.
+* Invoke `setState()` to update the local state. The new value for the team members attribute should be the newly created variable.
+
+#### 3. Send down our new helper method as props to `TeamContainer.jsx`.
+
+#### 4. Send down this helper method as props AGAIN to `TeamMember.jsx`.
+* Inside the helper method for updating a team member in `TeamMember.jsx`, invoke this helper method from props. Pass in the updated team member's instance as an argument.
 
 ## DELETE deliverables
 
-#### 10. Write a fetch DELETE request for deleting a team member.
+#### 1. In `TeamMember.jsx`, create an event handler for the "Remove" button.
+
+#### 2. Write a helper method in `App.js` that deletes an existing team member in the local state.
+
+#### 3. Send down our new helper method as props to `TeamContainer.jsx`.
+
+#### 4. Send down this helper method as props AGAIN to `TeamMember.jsx`.
+* Inside the helper method for deleting a team member in `TeamMember.jsx`, invoke this helper method from props. Pass in the deleted team member's id as an argument.
 
 #### Once you're done with all these deliverables, here's what your app shoud look like!
 ![screenshot of react app](https://i.imgur.com/nBHT3Rj.png)
