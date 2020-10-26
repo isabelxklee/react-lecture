@@ -202,9 +202,27 @@ In this example project, we're going to be creating a team directory for SuperHi
 #### 4. Send down this helper method as props AGAIN to `TeamMember.jsx`.
 * Inside the helper method for deleting a team member in `TeamMember.jsx`, invoke this helper method from props. Pass in the deleted team member's id as an argument.
 
+## Extra deliverable: search functionality
+
+#### 1. Add a search term attribute to the local state in `App.js`.
+* Pass down this value as props to `Search.jsx`.
+
+#### 2. In `Search.jsx`, create an event handler for the input field.
+* Set the value of the input field to be the value passed down from props.
+* Create a helper method that gets invoked every time the user interacts with the input field. Create an `onChange` event handler for the input field and invoke this helper method.
+
+#### 3. In `App.js`, create a helper method that updates the search term in the local state.
+* Use `setState()` to change the state.
+
+#### 4. Pass down this new helper method as props to `Search.jsx`.
+* In the event handler helper method in `Search.jsx`, invoke this helper method passed down from props. Pass in the `event.target.value` as an argument.
+
+#### 5. Create a helper method in `App.js` that filters the array of team members.
+* Instead of passing down the local state as props, pass down this new array to the `TeamContainer` component.
+
 ## App preview
 Once you're done with all these deliverables, here's what your app shoud look like!
-![screenshot of react app](https://i.imgur.com/nBHT3Rj.png)
+![screenshot of react app](https://i.imgur.com/9zYkdOR.png)
 
 <a name="new-app"/>
 
