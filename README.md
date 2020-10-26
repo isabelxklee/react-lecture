@@ -31,10 +31,10 @@ The terminal will ask you to start a new server since we already have the JSON s
 
 Open `http://localhost:3001` in the browser to see your app.
 
-A note on our data source
+##### A note on our data source
 * In this example project, our backend is simply going to be the JSON inside `db.json`, instead of an independent backend API.
 
-Optional, but helpful
+##### Optional, but helpful
 * Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
 
 <a name="goals"/>
@@ -170,7 +170,7 @@ In this example project, we're going to be creating a team directory for SuperHi
 ## UPDATE deliverables
 
 #### 1. In `TeamMember.jsx`, create an event handler for the "Give a star" button.
-* Create a helper method that gets invoked every time the user clicks on the `Give a star` button.
+* Create a helper method that gets invoked every time the user clicks on the `Give a star` button for a team member.
 * The helper method should include a fetch PATCH request to `localhost:3000/team-members/id`.
 * The only attribute that should be updated is the `stars` attribute. Its value should increase by 1 each time the fetch request is called.
 * Add an `onClick` event handler for this button that invokes the above helper method.
@@ -188,8 +188,14 @@ In this example project, we're going to be creating a team directory for SuperHi
 ## DELETE deliverables
 
 #### 1. In `TeamMember.jsx`, create an event handler for the "Remove" button.
+* Create a helper method that gets invoked when the user clicks on the `Remove` button for a team member.
+* The helper method should include a fetch DELETE request to `localhost:3000/team-members/id`.
+* Add an `onClick` event handler for this button that invokes the above helper method.
 
 #### 2. Write a helper method in `App.js` that deletes an existing team member in the local state.
+* Inside the helper method, use the `filter()` array method to filter out the team member that's being deleted.
+* Save the return value of this iteration to a new variable.
+* Invoke `setState()` to update the local state. The new value for the team members attribute should be the newly created variable.
 
 #### 3. Send down our new helper method as props to `TeamContainer.jsx`.
 
@@ -243,7 +249,7 @@ After you do this, your console's going to be throwing a lot of errors at you, s
 React events: https://reactjs.org/docs/events.html
 
 JSON View: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
-* OPTIONAL: Install JSON View as a Google Chrome Extension to help you view JSON documents.
+* Optional: Install JSON View as a Google Chrome Extension to help you view JSON documents.
 
 React Developer Tools: https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation
-* OPTIONAL: Install React Developer Tools as a Google Chrome Extension to help you view React component hierarchies in the browser.
+* Optional: Install React Developer Tools as a Google Chrome Extension to help you view React component hierarchies in the browser.
