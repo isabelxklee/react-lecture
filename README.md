@@ -31,6 +31,7 @@ The terminal will ask you to start a new server since we already have the JSON s
 
 Open `http://localhost:3001` in the browser to see your app.
 
+* A note on our data source: in this example project, our backend is simply going to be the JSON inside `db.json`, instead of an independent backend API.
 * OPTIONAL: Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
 
 <a name="goals"/>
@@ -85,55 +86,60 @@ Open `http://localhost:3001` in the browser to see your app.
 Here's a breakdown of some of the important files in your React app:
 
 `public/index.html`
-* First page that gets loaded when your application starts
+First page that gets loaded when your application starts.
 
 `public/manifest.json`
-* Holds meta data about your app
+Holds meta data about your app.
 
 `src/index.js`
-* JavaScript file that gets loaded from `index.html`
-* Renders `App.js` from here
+JavaScript file that gets loaded from `index.html`. Renders `App.js` from here.
 
 `src/index.css`
-* CSS rules for `index.js`
+CSS rules for `index.js`.
 
 `src/App.js`
-* The main component that renders all the other components
+The main component that renders all the other components.
 
 `src/App.css`
-* CSS rules for `App.js`
+CSS rules for `App.js`.
 
 `package.json`
-* Where all your dependencies live
-* If you edit this file, make sure to run `npm install` after!
+Where all your dependencies live. If you edit this file, make sure to run `npm install` after!
 
 `pacakge-lock.json`
-* Automatically generated file that changes any time your dependencies are updated
+Automatically generated file that changes any time your dependencies are updated.
 
 `.gitignore`
-* File that gets ignored when you push changes to GitHub
-* Handy for storing API keys and any other sensitive information
+File that gets ignored when you push changes to GitHub. Handy for storing API keys and any other sensitive information.
 
 <a name="deliverables"/>
 
-## Deliverables
+## READ deliverables
 In this example project, we're going to be creating a team directory for SuperHi! For each SuperHi team member, we're going to display their profile picture, name, role, location, and the number of stars they have.
 
 #### 1. Change the data in `App.js`.
-* Create an `<h1>` tag. Put "SuperHi Team Directory" in between the `<h1>` tags.
-* Create a `<p>` tag. Put "Here are all the wonderful members of SuperHi!" in between the `<p>` tags.
+Inside the `<h1>` tag, add "SuperHi Team Directory".
+Inside the `<p>` tags, add "Here are all the wonderful members of SuperHi!".
 
-#### 2. Create a functional component called `TeamContainer.jsx` inside the `src` directory.
-* Create a functional component that renders all the SuperHi team members as a `<TeamMember>` component.
+#### 2. Write a fetch GET request in `App.js` to pull in our data from the backend.
+Use `componentDidMount()`.
+Send the fetch request to `localhost:3000/team-members`.
+Update the local state with our new array of team members.
 
-#### 3. Create a class component called `TeamMember.jsx` inside the `src` directory.
-* Each team member card should display their personal information and have a "Give a star" button and "Remove" button.
+#### 3. Invoke the `TeamContainer` component inside `App.js`'s return statement.
+Send down props from `App.js`'s local state to the `TeamContainer` component, so that `<TeamMember>` can render all the SuperHi team members.
 
-#### 4. Write a fetch GET request in `App.js` to pull in our data.
-* Use `componentDidMount()`.
-* Update the local state with our new array of team members after completing the fetch request. 
+#### 4. In `TeamContainer.jsx`, iterate through the array of team members passed down from props and return a `TeamMember` component for each person.
+`TeamContainer` is a functional component, so it won't have access to `this` keyword.
+Make sure to pass in the keyword `props` as an argument in the function definition for `TeamContainer`.
 
-#### 5. Create a class component called `NewMemberForm.jsx`.
+#### 5. Display each team member's info in the `TeamMember` component.
+Each team member card should display their personal information and have a "Give a star" button and "Remove" button.
+Destructure the props in the `render()` method to have cleaner code in the return statement.
+
+## CREATE deliverables
+
+#### 6. Create a class component called `NewMemberForm.jsx`.
 * Create an HTML form that lets you add a new team member.
 * There should be input fields for: name, role, picture, and location.
 * No need to create an input field for stars because everyone starts with 0!
