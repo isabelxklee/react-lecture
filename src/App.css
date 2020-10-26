@@ -15,7 +15,7 @@ h3 {
   margin: 0;
 }
 
-p {
+p, label {
   font-size: 1.2em;
   margin: 0;
 }
@@ -43,10 +43,6 @@ input[type="text"] {
   font-size: 1em;
   margin: 0.4em 0em 1.2em 0em;
   width: 25%;
-}
-
-label {
-  font-weight: 700;
 }
 
 img {
@@ -78,4 +74,8 @@ form {
 
 .btn-group {
   margin-top: 1.4em;
+}
+
+#search {
+  margin-top: 2em;
 }

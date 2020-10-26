@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css'
+import Search from './Search.jsx'
 import TeamContainer from './TeamContainer.jsx'
 import NewMemberForm from './NewMemberForm.jsx'
 
 class App extends Component {
   state = {
-    teamMembers: []
+    teamMembers: [],
+    searchTerm: ""
   }
 
   componentDidMount() {
@@ -47,12 +49,33 @@ class App extends Component {
     })
   }
 
+  handleSearchTerm = (inputFromChild) => {
+    this.setState({
+      searchTerm: inputFromChild
+    })
+  }
+
+  filterMembers = () => {
+    let {searchTerm, teamMembers} = this.state
+
+    if (searchTerm === "") {
+      return teamMembers
+    } else {
+      return teamMembers.filter((member) => {
+        return member.location.toLowerCase().includes(searchTerm)
+      })
+    }
+  }
+
   render() {
+    console.log(this.state.searchTerm)
+
     return (
       <div>
         <h1>SuperHi Team Directory</h1>
         <p>Here are all the wonderful members of SuperHi!</p>
-        <TeamContainer teamMembers={this.state.teamMembers} updateMember={this.updateMember} deleteMember={this.deleteMember}/>
+        <Search searchTerm={this.state.searchTerm} handleSearchTerm={this.handleSearchTerm}/>
+        <TeamContainer teamMembers={this.filterMembers()} updateMember={this.updateMember} deleteMember={this.deleteMember}/>
         <NewMemberForm addNewMember={this.addNewMember} />
       </div>
     )
