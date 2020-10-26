@@ -202,7 +202,8 @@ In this example project, we're going to be creating a team directory for SuperHi
 #### 4. Send down this helper method as props AGAIN to `TeamMember.jsx`.
 * Inside the helper method for deleting a team member in `TeamMember.jsx`, invoke this helper method from props. Pass in the deleted team member's id as an argument.
 
-#### Once you're done with all these deliverables, here's what your app shoud look like!
+## App preview
+Once you're done with all these deliverables, here's what your app shoud look like!
 ![screenshot of react app](https://i.imgur.com/nBHT3Rj.png)
 
 <a name="new-app"/>
