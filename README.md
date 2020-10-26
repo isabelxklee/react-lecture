@@ -130,44 +130,50 @@ File that gets ignored when you push changes to GitHub. Handy for storing API ke
 In this example project, we're going to be creating a team directory for SuperHi! For each SuperHi team member, we're going to display their profile picture, name, role, location, and the number of stars they have.
 
 #### 1. Change the data in `App.js`.
-Inside the `<h1>` tag, add "SuperHi Team Directory".
-Inside the `<p>` tags, add "Here are all the wonderful members of SuperHi!".
+* Inside the `<h1>` tag, add "SuperHi Team Directory".
+* Inside the `<p>` tags, add "Here are all the wonderful members of SuperHi!".
 
 #### 2. Write a fetch GET request in `App.js` to pull in our data from the backend.
-Use `componentDidMount()`.
-Send the fetch request to `localhost:3000/team-members`.
-Update the local state with our new array of team members.
+* Use `componentDidMount()`.
+* Send the fetch request to `localhost:3000/team-members`.
+* Update the local state with our new array of team members.
 
 #### 3. Invoke the `TeamContainer` component inside `App.js`'s return statement.
-Send down props from `App.js`'s local state to the `TeamContainer` component, so that `<TeamMember>` can render all the SuperHi team members.
+* Send down props from `App.js`'s local state to the `TeamContainer` component, so that `<TeamMember>` can render all the SuperHi team members.
 
 #### 4. In `TeamContainer.jsx`, iterate through the array of team members passed down from props and return a `TeamMember` component for each person.
-`TeamContainer` is a functional component, so it won't have access to `this` keyword.
-Make sure to pass in the keyword `props` as an argument in the function definition for `TeamContainer`.
+* `TeamContainer` is a functional component, so it won't have access to `this` keyword.
+* Make sure to pass in the keyword `props` as an argument in the function definition for `TeamContainer`.
 
 #### 5. Display each team member's info in the `TeamMember` component.
-Each team member card should display their personal information and have a "Give a star" button and "Remove" button.
-Destructure the props in the `render()` method to have cleaner code in the return statement.
+* Each team member card should display their personal information and have a "Give a star" button and "Remove" button.
+* Destructure the props in the `render()` method to have cleaner code in the return statement.
 
 ## CREATE deliverables
 
 #### 1. Create event handlers in `NewMemberForm.jsx`.
-Write the following attributes for the local state: name, role, location, and picture.
-Create a helper method that gets invoked every time a user interacts with an input field.
-Create a helper method for when the form gets submitted. This helper method should include `event.preventDefault()` to stop the page from refreshing. It should also include a fetch POST request to `localhost:3000/team-members`.
-The stars attribute for new members can be set to 0 as a default.
+* Write the following attributes for the local state: name, role, location, and picture.
+* Create a helper method that gets invoked every time a user interacts with an input field.
+* Add an `onChange` event handler for each input field. This should invoke the helper method written above.
+* Create a helper method for when the form gets submitted. This helper method should include `event.preventDefault()` to stop the page from refreshing. It should also include a fetch POST request to `localhost:3000/team-members`.
+* The stars attribute for new members can be set to 0 as a default.
+* Add an `onSubmit` event handler to the form itself. This should invoke the helper method written above.
 
-#### 6. Create event handlers for the form.
-* Add `onChange` event handlers for each input field that updates the local state.
-* Add an `onSubmit` event handler for the form itself.
-* Create helper methods that get invoked each time the event handler is triggered.
+#### 2. Write a helper method in `App.js` that adds a new member to the local state.
+* Since we've already sent the new member's data to the backend (AKA our `db.json` file), we need to update the object in memory and the DOM. Since React automatically re-renders the browser any time the state is changed, we just need to focus on changing the object in memory.
+* Invoke `setState()` to update the local state.
+* Make sure to use the spread operator when invoking the array of team members to avoid directly mutating the data.
 
-#### 7. Write a fetch POST request for adding a new team member.
-* This fetch request should be inside the helper method for  `onSubmit`.
+#### 3. Send down our new helper method as props to `NewMemberForm.jsx`.
+* Inside the form submit helper method in `NewMemberForm.jsx`, invoke this helper method. Pass in the new team member instance as an argument.
+
+## UPDATE deliverables
 
 #### 8. Create event handlers for the "Edit" and "Delete" buttons for each team member.
 
 #### 9. Write a fetch PATCH request for updating a team member's information.
+
+## DELETE deliverables
 
 #### 10. Write a fetch DELETE request for deleting a team member.
 

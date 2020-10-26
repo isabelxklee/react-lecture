@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
-// import TeamContainer from './TeamContainer.jsx'
-// import NewMemberForm from './NewMemberForm.jsx'
+import TeamContainer from './TeamContainer.jsx'
+import NewMemberForm from './NewMemberForm.jsx'
 
 class App extends Component {
   state = {
@@ -29,6 +29,8 @@ class App extends Component {
       <div>
         <h1>{/* page title goes here */}</h1>
         <p>{/* description goes here */}</p>
+        <TeamContainer />
+        <NewMemberForm />
       </div>
     )
   }
