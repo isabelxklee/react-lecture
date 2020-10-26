@@ -31,8 +31,11 @@ The terminal will ask you to start a new server since we already have the JSON s
 
 Open `http://localhost:3001` in the browser to see your app.
 
-* A note on our data source: in this example project, our backend is simply going to be the JSON inside `db.json`, instead of an independent backend API.
-* OPTIONAL: Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
+A note on our data source
+* In this example project, our backend is simply going to be the JSON inside `db.json`, instead of an independent backend API.
+
+Optional, but helpful
+* Make a copy of `db.json` and save it as `original_db.json`. This is so that you can always refer back to the original database in case you mess up the database with incorrect PATCH requests.
 
 <a name="goals"/>
 
@@ -86,30 +89,39 @@ Open `http://localhost:3001` in the browser to see your app.
 Here's a breakdown of some of the important files in your React app:
 
 `public/index.html`
+
 First page that gets loaded when your application starts.
 
 `public/manifest.json`
+
 Holds meta data about your app.
 
 `src/index.js`
+
 JavaScript file that gets loaded from `index.html`. Renders `App.js` from here.
 
 `src/index.css`
+
 CSS rules for `index.js`.
 
 `src/App.js`
+
 The main component that renders all the other components.
 
 `src/App.css`
+
 CSS rules for `App.js`.
 
 `package.json`
+
 Where all your dependencies live. If you edit this file, make sure to run `npm install` after!
 
 `pacakge-lock.json`
+
 Automatically generated file that changes any time your dependencies are updated.
 
 `.gitignore`
+
 File that gets ignored when you push changes to GitHub. Handy for storing API keys and any other sensitive information.
 
 <a name="deliverables"/>
@@ -139,10 +151,11 @@ Destructure the props in the `render()` method to have cleaner code in the retur
 
 ## CREATE deliverables
 
-#### 6. Create a class component called `NewMemberForm.jsx`.
-* Create an HTML form that lets you add a new team member.
-* There should be input fields for: name, role, picture, and location.
-* No need to create an input field for stars because everyone starts with 0!
+#### 1. Create event handlers in `NewMemberForm.jsx`.
+Write the following attributes for the local state: name, role, location, and picture.
+Create a helper method that gets invoked every time a user interacts with an input field.
+Create a helper method for when the form gets submitted. This helper method should include `event.preventDefault()` to stop the page from refreshing. It should also include a fetch POST request to `localhost:3000/team-members`.
+The stars attribute for new members can be set to 0 as a default.
 
 #### 6. Create event handlers for the form.
 * Add `onChange` event handlers for each input field that updates the local state.
