@@ -116,7 +116,7 @@ CSS rules for `App.js`.
 
 Where all your dependencies live. If you edit this file, make sure to run `npm install` after!
 
-`pacakge-lock.json`
+`package-lock.json`
 
 Automatically generated file that changes any time your dependencies are updated.
 

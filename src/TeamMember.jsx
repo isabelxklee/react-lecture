@@ -11,14 +11,15 @@ class TeamMember extends Component {
 
   render() {
     // destructure props here
+    let {name, role, location, picture, stars} = this.props.teamMemberInfo
 
     return (
       <div className="card">
-        <img src={""} alt={""} />
-        <h3>{""}</h3>
-        <p>{""}</p>
-        <p>{""}</p>
-        <p>{""} stars</p>
+        <img src={picture} alt={name} />
+        <h3>{name}</h3>
+        <p>{role}</p>
+        <p>{location}</p>
+        <p>{stars} stars</p>
 
         <div className="btn-group">
           <button><span role="img" aria-label="star">⭐️ </span>Give a star</button>
