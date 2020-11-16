@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
 const Search = (props) => {
   let handleChange = (event) => {
-    props.handleSearchTerm(event.target.value);
-  };
+    props.handleSearchTerm(event.target.value)
+  }
 
   return (
     <div id="search">
@@ -17,7 +17,7 @@ const Search = (props) => {
         onChange={handleChange}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search

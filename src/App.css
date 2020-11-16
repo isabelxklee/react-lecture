@@ -2,7 +2,7 @@ body {
   padding: 6em;
   background-color: #2727e6;
   color: white;
-  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
+  font-family: 'PX Grotesk', Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -22,10 +22,10 @@ label {
 }
 
 button,
-input[type="submit"] {
+input[type='submit'] {
   background-color: #2727e6;
   color: white;
-  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
+  font-family: 'PX Grotesk', Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 700;
   border: none;
@@ -34,14 +34,14 @@ input[type="submit"] {
   border-radius: 0.2em;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background-color: white;
   color: #2727e6;
 }
 
-input[type="text"] {
+input[type='text'] {
   padding: 0.4em;
-  font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
+  font-family: 'PX Grotesk', Helvetica, Arial, sans-serif;
   font-size: 1em;
   margin: 0.4em 0em 1.2em 0em;
   width: 25%;

@@ -1,5 +1,5 @@
-import React from "react";
-import TeamMember from "./TeamMember.jsx";
+import React from 'react'
+import TeamMember from './TeamMember.jsx'
 
 const TeamContainer = (props) => {
   let teamArray = props.teamMembers.map((member) => {
@@ -10,10 +10,10 @@ const TeamContainer = (props) => {
         updateMember={props.updateMember}
         deleteMember={props.deleteMember}
       />
-    );
-  });
+    )
+  })
 
-  return <div className="card-container">{teamArray}</div>;
-};
+  return <div className="card-container">{teamArray}</div>
+}
 
-export default TeamContainer;
+export default TeamContainer
