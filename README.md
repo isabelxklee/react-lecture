@@ -16,8 +16,7 @@
 Fork this repo. Copy the new repo URL and run `git clone` in your terminal. `cd` into the new directory and run these commands.
 
 ```
-npm install
-npm install -g json-server
+yarn install
 json-server --watch db.json
 ```
 
@@ -26,7 +25,7 @@ This will start the JSON server in `localhost:3000`. Navigate to `localhost:3000
 Now, open up a new terminal and run the following command:
 
 ```
-npm start
+yarn start
 ```
 
 The terminal will ask you to start a new server since we already have the JSON server running on `localhost:3000`. Enter `y` to start a new server on `localhost:3001`.
@@ -130,7 +129,7 @@ CSS rules for `App.js`.
 
 Where all your dependencies live. If you edit this file, make sure to run `npm install` after!
 
-`package-lock.json`
+`yarn.lock`
 
 Automatically generated file that changes any time your dependencies are updated.
 
@@ -268,7 +267,7 @@ Now, if you want to try creating your own React app from scratch, here are the s
 In your terminal, run the following command. Replace `my-app-name` with the name of your app.
 
 ```
-$ npx create-react-app my-app-name
+$ yarn create react-app my-app
 ```
 
 Navigate to the new directory.
@@ -280,7 +279,7 @@ $ cd my-app-name
 Start the server and navigate to `localhost:3000` in your browser.
 
 ```
-$ npm start
+$ yarn start
 ```
 
 ### Cleaning up the default files
