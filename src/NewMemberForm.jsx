@@ -36,10 +36,12 @@ class NewMemberForm extends Component {
       }),
     })
       .then((response) => response.json())
-      .then(console.log)
+      .then((newMember) => {
+        this.props.createMemberMethod(newMember)
+      })
   }
 
-  render() {
+  render() {    
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Add a new member to the SuperHi team</h2>

@@ -14,7 +14,7 @@
       "role": "Senior Developer",
       "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U012D33N3PG-96b4eb87ac4c-512",
       "location": "Scotland",
-      "stars": 0
+      "stars": 12
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "role": "Senior Software Engineer",
       "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U0128S6U0AH-a4fad2a5e6e7-512",
       "location": "London, UK",
-      "stars": 0
+      "stars": 11
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "role": "User Researcher",
       "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U0139LJDCN4-0759399dafb5-512",
       "location": "Sweden",
-      "stars": 0
+      "stars": 20
     },
     {
       "id": 5,
@@ -62,7 +62,7 @@
       "role": "Customer Support Specialist",
       "picture": "https://ca.slack-edge.com/T0123FT5DTQ-U012D4DUF8W-efc1d0872a37-512",
       "location": "UK",
-      "stars": 0
+      "stars": 2
     },
     {
       "id": 9,
@@ -111,6 +111,22 @@
       "picture": "https://c.files.bbci.co.uk/12A9B/production/_111434467_gettyimages-1143489763.jpg",
       "stars": 0,
       "id": 14
+    },
+    {
+      "name": "Test",
+      "role": "Test",
+      "location": "Test",
+      "picture": "www.google.com",
+      "stars": 0,
+      "id": 15
+    },
+    {
+      "name": "Arianna",
+      "role": "Badass",
+      "location": "California",
+      "picture": "www.google.com",
+      "stars": 0,
+      "id": 16
     }
   ]
 }

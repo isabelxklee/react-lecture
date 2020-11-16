@@ -25,10 +25,33 @@ class App extends Component {
 
   addNewMember = (newMember) => {
     // update the state to add the new team member
+    this.setState({
+      teamMembers: [...this.state.teamMembers, newMember]
+    })
   }
 
-  updateMember = (updatedMember) => {
+  updateTeamMemberData = (updatedMember) => {
     // update the state with the updated team member's information
+    // map through the existing array of team members
+    // check to see if the passed in instance already exists
+    // if it exists, replace the old instance with the new data
+    // if not, return the current instance
+    // save the new array from the map loop to a new variable
+    // using setState, update the local state's array with the new variable
+
+    const newArray = this.state.teamMembers.map((member) => {
+      if (member.id === updatedMember.id) {
+        return updatedMember
+      } else {
+        return member
+      }
+    })
+
+    this.setState({
+      teamMembers: newArray
+    })
+
+    console.log(this.state.teamMembers)
   }
 
   deleteMember = (deletedId) => {
@@ -43,8 +66,9 @@ class App extends Component {
         <TeamContainer
           teamMembersArray={this.state.teamMembers}
           exampleFunction={this.exampleFunction}
+          updateTeamMemberData={this.updateTeamMemberData} 
         />
-        <NewMemberForm />
+        <NewMemberForm createMemberMethod={this.addNewMember} />
       </div>
     )
   }

@@ -200,7 +200,7 @@ In this example project, we're going to be creating a team directory for SuperHi
 
 #### 2. Write a helper method in `App.js` that updates an existing team member in the local state.
 
-- Inside the helper method, map through the array of team members from the local state. Write conditional logic that checks if the member that's being updated matches any of the existing members. If there's a match, return the member that's being update. If not, return the current member in the loop.
+- Inside the helper method, map through the array of team members from the local state. Write conditional logic that checks if the member that's being updated matches any of the existing members. If there's a match, return the member that's being updated. If not, return the current member in the loop.
 - Save the return value of this iteration to a new variable.
 - Invoke `setState()` to update the local state. The new value for the team members attribute should be the newly created variable.
 
