@@ -273,7 +273,7 @@ $ yarn create react-app my-app
 Navigate to the new directory.
 
 ```
-$ cd my-app-name
+$ cd my-app
 ```
 
 Start the server and navigate to `localhost:3000` in your browser.
