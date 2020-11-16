@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch('http://localhost:3000/team-members')
-      .then((r) => r.json())
+      .then(response => response.json())
       .then((newTeamMembers) => {
         this.setState({
           teamMembers: newTeamMembers,

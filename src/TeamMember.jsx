@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 class TeamMember extends Component {
-  handleStars = (event) => {
+  increaseStars = (event) => {
     let {id, stars} = this.props.teamMember
 
     fetch(`http://localhost:3000/team-members/${id}`, {
@@ -13,7 +13,7 @@ class TeamMember extends Component {
         stars: stars + 1,
       }),
     })
-      .then((r) => r.json())
+      .then(response => response.json())
       .then((member) => {
         this.props.updateMember(member)
       })
@@ -25,10 +25,8 @@ class TeamMember extends Component {
     fetch(`http://localhost:3000/team-members/${id}`, {
       method: 'DELETE',
     })
-      .then((r) => r.json())
-      .then(() => {
-        this.props.deleteMember(id)
-      })
+      .then(response => response.json())
+      .then(this.props.deleteMember(id))
   }
 
   render() {
@@ -43,18 +41,9 @@ class TeamMember extends Component {
         <p>{stars} stars</p>
 
         <div className="btn-group">
-          <button onClick={this.handleStars}>
-            <span role="img" aria-label="star">
-              ⭐️{' '}
-            </span>
-            Give a star
-          </button>
-          <button onClick={this.handleDelete}>
-            <span role="img" aria-label="yellow-warning-sign">
-              ⚠️{' '}
-            </span>
-            Remove
-          </button>
+          <button onClick={this.increaseStars}><span role="img" aria-label="star">⭐️{' '}</span>Give a star</button>
+
+          <button onClick={this.handleDelete}><span role="img" aria-label="yellow-warning-sign">⚠️{' '}</span>Remove</button>
         </div>
       </div>
     )
