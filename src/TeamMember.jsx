@@ -13,7 +13,7 @@ class TeamMember extends Component {
         stars: stars + 1,
       }),
     })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((member) => {
         this.props.updateMember(member)
       })
@@ -25,7 +25,7 @@ class TeamMember extends Component {
     fetch(`http://localhost:3000/team-members/${id}`, {
       method: 'DELETE',
     })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then(this.props.deleteMember(id))
   }
 
@@ -41,9 +41,19 @@ class TeamMember extends Component {
         <p>{stars} stars</p>
 
         <div className="btn-group">
-          <button onClick={this.increaseStars}><span role="img" aria-label="star">⭐️{' '}</span>Give a star</button>
+          <button onClick={this.increaseStars}>
+            <span role="img" aria-label="star">
+              ⭐️{' '}
+            </span>
+            Give a star
+          </button>
 
-          <button onClick={this.handleDelete}><span role="img" aria-label="yellow-warning-sign">⚠️{' '}</span>Remove</button>
+          <button onClick={this.handleDelete}>
+            <span role="img" aria-label="yellow-warning-sign">
+              ⚠️{' '}
+            </span>
+            Remove
+          </button>
         </div>
       </div>
     )

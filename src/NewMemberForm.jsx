@@ -30,7 +30,7 @@ class NewMemberForm extends Component {
         stars: 0,
       }),
     })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((newMember) => {
         this.props.addNewMember(newMember)
       })

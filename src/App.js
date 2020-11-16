@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch('http://localhost:3000/team-members')
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((newTeamMembers) => {
         this.setState({
           teamMembers: newTeamMembers,
@@ -76,18 +76,13 @@ class App extends Component {
       <div>
         <h1>SuperHi Team Directory</h1>
         <p>Here are all the wonderful members of SuperHi!</p>
-        <Search
-          searchTerm={this.state.searchTerm}
-          handleSearchTerm={this.handleSearchTerm}
-        />
+        <Search searchTerm={this.state.searchTerm} handleSearchTerm={this.handleSearchTerm} />
         <TeamContainer
           teamMembers={this.filterMembers()}
           updateMember={this.updateMember}
           deleteMember={this.deleteMember}
         />
-        <NewMemberForm
-          addNewMember={this.addNewMember}
-        />
+        <NewMemberForm addNewMember={this.addNewMember} />
       </div>
     )
   }
