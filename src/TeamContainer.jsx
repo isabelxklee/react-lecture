@@ -12,8 +12,6 @@ const TeamContainer = (props) => {
     )
   })
 
-  console.log(props.exampleFunction)
-
   return <div className="card-container">{array}</div>
 }
 
