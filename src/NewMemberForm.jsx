@@ -41,7 +41,7 @@ class NewMemberForm extends Component {
       })
   }
 
-  render() {    
+  render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Add a new member to the SuperHi team</h2>

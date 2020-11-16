@@ -7,7 +7,7 @@ import Search from './Search.jsx'
 class App extends Component {
   state = {
     teamMembers: [],
-    searchTerm: ""
+    searchTerm: '',
   }
 
   componentDidMount() {
@@ -28,7 +28,7 @@ class App extends Component {
   addNewMember = (newMember) => {
     // update the state to add the new team member
     this.setState({
-      teamMembers: [...this.state.teamMembers, newMember]
+      teamMembers: [...this.state.teamMembers, newMember],
     })
   }
 
@@ -50,7 +50,7 @@ class App extends Component {
     })
 
     this.setState({
-      teamMembers: newArray
+      teamMembers: newArray,
     })
 
     console.log(this.state.teamMembers)
@@ -62,20 +62,22 @@ class App extends Component {
 
   changeSearchTerm = (input) => {
     this.setState({
-      searchTerm: input
+      searchTerm: input,
     })
   }
 
   filterTeamMembers = () => {
-    if (this.state.searchTerm === "") {
-      return this.state.teamMembers
-    } else {
-      const filteredArray = this.state.teamMembers.filter((member) => {
-        return member.location.toLowerCase().includes(this.state.searchTerm)
-      })
+    let newArray = []
 
-      return filteredArray
+    if (this.state.searchTerm === '') {
+      newArray = this.state.teamMembers
+    } else {
+      newArray = this.state.teamMembers.filter((member) =>
+        member.location.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+      )
     }
+
+    return newArray
   }
 
   render() {
@@ -87,7 +89,7 @@ class App extends Component {
         <TeamContainer
           teamMembersArray={this.filterTeamMembers()}
           exampleFunction={this.exampleFunction}
-          updateTeamMemberData={this.updateTeamMemberData} 
+          updateTeamMemberData={this.updateTeamMemberData}
         />
         <NewMemberForm createMemberMethod={this.addNewMember} />
       </div>

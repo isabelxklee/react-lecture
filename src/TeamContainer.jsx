@@ -8,7 +8,12 @@ const TeamContainer = (props) => {
 
   let array = props.teamMembersArray.map((member) => {
     return (
-      <TeamMember key={member.id} teamMemberInfo={member} exampleFunction={props.exampleFunction} updateTeamMemberData={props.updateTeamMemberData} />
+      <TeamMember
+        key={member.id}
+        teamMemberInfo={member}
+        exampleFunction={props.exampleFunction}
+        updateTeamMemberData={props.updateTeamMemberData}
+      />
     )
   })
 
