@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 class TeamMember extends Component {
   handleStars = (event) => {
@@ -22,12 +22,22 @@ class TeamMember extends Component {
         <p>{stars} stars</p>
 
         <div className="btn-group">
-          <button><span role="img" aria-label="star">⭐️ </span>Give a star</button>
-          <button><span role="img" aria-label="yellow-warning-sign">⚠️ </span>Remove</button>
+          <button>
+            <span role="img" aria-label="star">
+              ⭐️{' '}
+            </span>
+            Give a star
+          </button>
+          <button>
+            <span role="img" aria-label="yellow-warning-sign">
+              ⚠️{' '}
+            </span>
+            Remove
+          </button>
         </div>
       </div>
     )
   }
 }
- 
+
 export default TeamMember

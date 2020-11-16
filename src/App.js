@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import './App.css'
 import TeamContainer from './TeamContainer.jsx'
 import NewMemberForm from './NewMemberForm.jsx'
 
 class App extends Component {
   state = {
-    teamMembers: []
+    teamMembers: [],
   }
 
   componentDidMount() {
     // write a GET fetch request to pull in all the data about the team members from the backend
-    fetch("http://localhost:3000/team-members")
-    .then(response => response.json())
-    .then((array) => {
-      this.setState({
-        teamMembers: array
+    fetch('http://localhost:3000/team-members')
+      .then((response) => response.json())
+      .then((array) => {
+        this.setState({
+          teamMembers: array,
+        })
       })
-    })
   }
 
   exampleFunction = () => {
-    return "hello, world!"
+    return 'hello, world!'
   }
 
   addNewMember = (newMember) => {
@@ -40,11 +40,14 @@ class App extends Component {
       <div>
         <h1>SuperHi Team Directory</h1>
         <p>Here are all the wonderful members of SuperHi!</p>
-        <TeamContainer teamMembersArray={this.state.teamMembers} exampleFunction={this.exampleFunction} />
+        <TeamContainer
+          teamMembersArray={this.state.teamMembers}
+          exampleFunction={this.exampleFunction}
+        />
         <NewMemberForm />
       </div>
     )
   }
 }
- 
+
 export default App

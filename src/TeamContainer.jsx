@@ -7,16 +7,14 @@ const TeamContainer = (props) => {
   // for each member, return a <TeamMember> component
 
   let array = props.teamMembersArray.map((member) => {
-    return <TeamMember key={member.id} teamMemberInfo={member} exampleFunction={props.exampleFunction}/>
+    return (
+      <TeamMember key={member.id} teamMemberInfo={member} exampleFunction={props.exampleFunction} />
+    )
   })
 
   console.log(props.exampleFunction)
 
-  return (
-    <div className="card-container">
-      {array}
-    </div>
-  )
+  return <div className="card-container">{array}</div>
 }
- 
+
 export default TeamContainer
