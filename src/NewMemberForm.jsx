@@ -30,7 +30,7 @@ class NewMemberForm extends Component {
         stars: 0,
       }),
     })
-      .then((r) => r.json())
+      .then(response => response.json())
       .then((newMember) => {
         this.props.addNewMember(newMember)
       })
@@ -43,22 +43,46 @@ class NewMemberForm extends Component {
 
         <label>Name</label>
         <br />
-        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} />
+        <input
+          type="text"
+          name="name"
+          autoComplete="off"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
         <br />
 
         <label>Role</label>
         <br />
-        <input type="text" name="role" value={this.state.value} onChange={this.handleChange} />
+        <input
+          type="text"
+          name="role"
+          autoComplete="off"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
         <br />
 
         <label>Location</label>
         <br />
-        <input type="text" name="location" value={this.state.value} onChange={this.handleChange} />
+        <input
+          type="text"
+          name="location"
+          autoComplete="off"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
         <br />
 
         <label>Picture URL</label>
         <br />
-        <input type="text" name="picture" value={this.state.value} onChange={this.handleChange} />
+        <input
+          type="text"
+          name="picture"
+          autoComplete="off"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
         <br />
 
         <input type="submit" value="Add new member" />
