@@ -15,12 +15,14 @@ h3 {
   margin: 0;
 }
 
-p, label {
+p,
+label {
   font-size: 1.2em;
   margin: 0;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   background-color: #2727e6;
   color: white;
   font-family: "PX Grotesk", Helvetica, Arial, sans-serif;
