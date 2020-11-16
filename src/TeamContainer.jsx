@@ -1,19 +1,17 @@
 import React from 'react'
 import TeamMember from './TeamMember.jsx'
 
-const TeamContainer = (props) => {
-  let teamArray = props.teamMembers.map((member) => {
-    return (
-      <TeamMember
+const TeamContainer = ({teamMembers, updateMember, deleteMember}) => (
+  <div id="team-container">
+    {teamMembers.map((member) => (
+      <TeamMember 
         key={member.id}
         teamMember={member}
-        updateMember={props.updateMember}
-        deleteMember={props.deleteMember}
+        updateMember={updateMember}
+        deleteMember={deleteMember}
       />
-    )
-  })
-
-  return <div className="card-container">{teamArray}</div>
-}
+    ))}
+  </div>
+)
 
 export default TeamContainer
